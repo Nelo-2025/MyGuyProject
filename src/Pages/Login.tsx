@@ -1,5 +1,5 @@
 import { useId, useState, type FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 type LoginProps = {
@@ -67,9 +67,9 @@ function Login({ onLogin }: LoginProps) {
 
             <div className="password-row">
               <label htmlFor="password">Password</label>
-              <a href="#" className="forgot-link">
+              <Link to="/forgot-password" className="forgot-link">
                 Forgot Password?
-              </a>
+              </Link>
             </div>
             <div className="input-wrap">
               <span className="input-icon" aria-hidden="true">
@@ -110,7 +110,7 @@ function Login({ onLogin }: LoginProps) {
 
             <div className="support-block">
               <p>Need assistance? Contact your system administrator or support team.</p>
-              <button type="button" className="support-btn">
+              <Link to="/support" className="support-btn" aria-label="Open support page">
                 <span aria-hidden="true">
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" role="presentation">
                     <path d="M12 19v-2.4" />
@@ -120,7 +120,7 @@ function Login({ onLogin }: LoginProps) {
                   </svg>
                 </span>
                 <span>Support</span>
-              </button>
+              </Link>
             </div>
           </form>
         </section>
@@ -129,9 +129,9 @@ function Login({ onLogin }: LoginProps) {
       <footer className="login-footer">
         <p>MyGuy Logistics</p>
         <nav aria-label="Legal links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Support</a>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-of-service">Terms of Service</Link>
+          <Link to="/support">Support</Link>
         </nav>
         <p>Copyright 2024 MyGuy Logistics. All rights reserved.</p>
       </footer>

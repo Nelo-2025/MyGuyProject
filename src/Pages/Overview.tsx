@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 import SystemTopBar from "./Component/SystemTopBar.tsx";
 
@@ -59,6 +59,14 @@ const operationsLinks: SidebarLink[] = [
 const growthLinks: SidebarLink[] = [
 	{ label: "Validation", to: "/validation" },
 	{ label: "Network Brain", to: "/network-brain" },
+];
+
+const mobileLinks: Array<{ label: string; to: string }> = [
+	{ label: "Dashboard", to: "/overview" },
+	{ label: "Fleet", to: "/riders" },
+	{ label: "New", to: "/orders" },
+	{ label: "Alerts", to: "/finance" },
+	{ label: "Profile", to: "/vendors" },
 ];
 
 const metrics: MetricCard[] = [
@@ -152,6 +160,7 @@ function SidebarLinkItem({ label, to, count, countClassName }: SidebarLink) {
 
 function Overview() {
 	const { pathname } = useLocation();
+	const navigate = useNavigate();
 	const [ordersSearchQuery, setOrdersSearchQuery] = useState("");
 	const [activeOrdersTab, setActiveOrdersTab] = useState<OrdersTab>("all");
 	const pageTitleMap: Record<string, string> = {
@@ -268,7 +277,11 @@ function Overview() {
 					<button type="button" className="mg-nav-item muted">
 						Help Center
 					</button>
-					<button type="button" className="mg-nav-item muted">
+					<button
+						type="button"
+						className="mg-nav-item muted"
+						onClick={() => navigate("/")}
+					>
 						Logout
 					</button>
 				</div>
@@ -475,13 +488,15 @@ function Overview() {
 				</section>
 
 				<nav className="mg-mobile-nav" aria-label="Mobile">
-					<button type="button" className="active">
-						Dashboard
-					</button>
-					<button type="button">Fleet</button>
-					<button type="button">New</button>
-					<button type="button">Alerts</button>
-					<button type="button">Profile</button>
+					{mobileLinks.map((link) => (
+						<NavLink
+							key={link.to}
+							to={link.to}
+							className={({ isActive }) => (isActive ? "active" : "")}
+						>
+							{link.label}
+						</NavLink>
+					))}
 				</nav>
 			</main>
 		</div>

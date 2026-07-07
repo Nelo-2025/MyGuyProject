@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import SystemTopBar from "./SystemTopBar.tsx";
 
 type SidebarLink = {
@@ -27,6 +27,14 @@ const growthLinks: SidebarLink[] = [
   { label: "Network Brain", to: "/network-brain" },
 ];
 
+const mobileLinks: Array<{ label: string; to: string }> = [
+  { label: "Dashboard", to: "/overview" },
+  { label: "Fleet", to: "/riders" },
+  { label: "New", to: "/orders" },
+  { label: "Alerts", to: "/finance" },
+  { label: "Profile", to: "/vendors" },
+];
+
 function SidebarLinkItem({ label, to, count, countClassName }: SidebarLink) {
   return (
     <NavLink
@@ -40,6 +48,8 @@ function SidebarLinkItem({ label, to, count, countClassName }: SidebarLink) {
 }
 
 function AdminShell({ title, children }: AdminShellProps) {
+  const navigate = useNavigate();
+
   return (
     <div className="mg-dashboard">
       <aside className="mg-sidenav">
@@ -78,7 +88,11 @@ function AdminShell({ title, children }: AdminShellProps) {
           <button type="button" className="mg-nav-item muted">
             Help Center
           </button>
-          <button type="button" className="mg-nav-item muted">
+          <button
+            type="button"
+            className="mg-nav-item muted"
+            onClick={() => navigate("/")}
+          >
             Logout
           </button>
         </div>
@@ -96,13 +110,15 @@ function AdminShell({ title, children }: AdminShellProps) {
         <SystemTopBar title={title} />
         {children}
         <nav className="mg-mobile-nav" aria-label="Mobile">
-          <button type="button" className="active">
-            Dashboard
-          </button>
-          <button type="button">Fleet</button>
-          <button type="button">New</button>
-          <button type="button">Alerts</button>
-          <button type="button">Profile</button>
+          {mobileLinks.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              {link.label}
+            </NavLink>
+          ))}
         </nav>
       </main>
     </div>
