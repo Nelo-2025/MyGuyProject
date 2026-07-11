@@ -48,11 +48,11 @@ function Riders() {
                             <thead>
                                 <tr>
                                     <th>Rider Name</th>
-                                    <th>Vehicle Type</th>
-                                    <th>Trips Today</th>
-                                    <th>Acceptance Rate</th>
-                                    <th>Avg Performance Latency</th>
-                                    <th>Status</th>
+                                    <th className="mg-cell-status">Vehicle Type</th>
+                                    <th className="mg-cell-number">Trips Today</th>
+                                    <th className="mg-cell-number">Acceptance Rate</th>
+                                    <th className="mg-cell-number">Avg Performance Latency</th>
+                                    <th className="mg-cell-status">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,14 +61,16 @@ function Riders() {
                                         <td>
                                             <div className="mg-rider-block">
                                                 <span className="mg-rider-avatar">{rider.initials}</span>
-                                                <strong>{rider.riderName}</strong>
+                                                <div>
+                                                    <strong>{rider.riderName}</strong>
+                                                </div>
                                             </div>
                                         </td>
-                                        <td>
+                                        <td className="mg-cell-status">
                                             <span className={`mg-vehicle-pill ${rider.vehicleType.toLowerCase()}`}>{rider.vehicleType}</span>
                                         </td>
-                                        <td className="mono">{rider.tripsToday}</td>
-                                        <td>
+                                        <td className="mono mg-cell-number">{rider.tripsToday}</td>
+                                        <td className="mg-cell-number">
                                             <div className="mg-rate-cell">
                                                 <div className="mg-rate-bar" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={rider.acceptanceRate}>
                                                     <span style={{ width: `${rider.acceptanceRate}%` }} />
@@ -76,8 +78,8 @@ function Riders() {
                                                 <strong>{rider.acceptanceRate}%</strong>
                                             </div>
                                         </td>
-                                        <td className="mono">{rider.avgLatencyMin} min</td>
-                                        <td>
+                                        <td className="mono mg-cell-number">{rider.avgLatencyMin} min</td>
+                                        <td className="mg-cell-status">
                                             <span className={`mg-rider-status ${rider.status.toLowerCase()}`}>{rider.status}</span>
                                         </td>
                                     </tr>

@@ -33,6 +33,20 @@ body {
 h1,
 h2,
 h3,
-strong {
+h4,
+h5,
+h6 {
   font-family: var(--heading);
+}
+
+strong {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

@@ -106,11 +106,11 @@ function Vendors() {
                 <tr>
                   <th>Vendor Block</th>
                   <th>Business Category</th>
-                  <th>Tier Plan Level</th>
-                  <th>Orders (Wk)</th>
-                  <th>Revenue (Wk)</th>
-                  <th>Rating</th>
-                  <th>Operational Status</th>
+                  <th className="mg-cell-status">Tier Plan Level</th>
+                  <th className="mg-cell-number">Orders (Wk)</th>
+                  <th className="mg-cell-number">Revenue (Wk)</th>
+                  <th className="mg-cell-number">Rating</th>
+                  <th className="mg-cell-status">Operational Status</th>
                 </tr>
               </thead>
               <tbody>
@@ -125,15 +125,15 @@ function Vendors() {
                       </div>
                     </td>
                     <td>{vendor.businessCategory}</td>
-                    <td>
+                    <td className="mg-cell-status">
                       <span className={`mg-tier-pill ${vendor.tierPlanLevel.toLowerCase()}`}>{vendor.tierPlanLevel}</span>
                     </td>
-                    <td className="mono">{vendor.ordersWk}</td>
-                    <td className="mono">{formatCompactCurrency(vendor.revenueWk)}</td>
-                    <td>
+                    <td className="mono mg-cell-number">{vendor.ordersWk}</td>
+                    <td className="mono mg-cell-number">{formatCompactCurrency(vendor.revenueWk)}</td>
+                    <td className="mg-cell-number">
                       <span className="mg-rating-pill">{vendor.rating.toFixed(1)}</span>
                     </td>
-                    <td>
+                    <td className="mg-cell-status">
                       <span className={`mg-vendor-status ${vendor.operationalStatus.toLowerCase()}`}>{vendor.operationalStatus}</span>
                     </td>
                   </tr>

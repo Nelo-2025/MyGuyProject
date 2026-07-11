@@ -298,7 +298,7 @@ function Overview() {
 			<main className="mg-canvas">
 				<SystemTopBar title={pageTitle} />
 
-				<section className="mg-content">
+				<section className="mg-content mg-overview-content">
 					<div className="mg-heading-row">
 						<div>
 							<p className="mg-eyebrow">{isOrdersRoute ? "Delivery Checkout Analytics" : "Operational Insights"}</p>
@@ -314,8 +314,11 @@ function Overview() {
 					{isOverviewRoute ? (
 						<>
 							<div className="mg-metric-grid">
-								{metrics.map((metric) => (
-									<article key={metric.label} className="mg-metric-card">
+								{metrics.map((metric, index) => (
+									<article
+										key={metric.label}
+										className={`mg-metric-card${index === 0 ? " is-primary-metric" : ""}`}
+									>
 										<div className="mg-metric-head">
 											<span>{metric.label}</span>
 											<strong className={metric.statusType}>{metric.statusText}</strong>
@@ -440,30 +443,30 @@ function Overview() {
 								<table className="mg-orders-table">
 									<thead>
 										<tr>
-											<th>Order ID</th>
+											<th className="mg-cell-number">Order ID</th>
 											<th>Vendor Name</th>
 											<th>Customer ID / Name</th>
 											<th>Assigned Rider</th>
-											<th>Status</th>
-											<th>Fulfillment Source</th>
-											<th>Total Pricing</th>
+											<th className="mg-cell-status">Status</th>
+											<th className="mg-cell-status">Fulfillment Source</th>
+											<th className="mg-cell-number">Total Pricing</th>
 										</tr>
 									</thead>
 									<tbody>
 										{filteredOrders.length > 0 ? (
 											filteredOrders.map((order) => (
 												<tr key={order.id}>
-													<td className="mono">{order.id}</td>
+													<td className="mono mg-cell-number">{order.id}</td>
 													<td>{order.vendorName}</td>
 													<td>{order.customerName}</td>
 													<td>{order.assignedRider ?? "-"}</td>
-													<td>
+													<td className="mg-cell-status">
 														<span className={`mg-order-status ${order.status.toLowerCase().replace(" ", "-")}`}>{order.status}</span>
 													</td>
-													<td>
+													<td className="mg-cell-status">
 														<span className="mg-source-pill">{order.fulfillmentSource}</span>
 													</td>
-													<td className="mono">{ordersCurrencyFormatter.format(order.totalPrice)}</td>
+													<td className="mono mg-cell-number">{ordersCurrencyFormatter.format(order.totalPrice)}</td>
 												</tr>
 											))
 										) : (

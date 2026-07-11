@@ -140,23 +140,23 @@ function Finance() {
 							<table className="mg-finance-ledger-table">
 								<thead>
 									<tr>
-										<th>Ledger ID</th>
-										<th>Time</th>
+										<th className="mg-cell-number">Ledger ID</th>
+										<th className="mg-cell-number">Time</th>
 										<th>Counterparty</th>
-										<th>Type</th>
-										<th>Channel</th>
-										<th>Amount</th>
+										<th className="mg-cell-status">Type</th>
+										<th className="mg-cell-status">Channel</th>
+										<th className="mg-cell-number">Amount</th>
 									</tr>
 								</thead>
 								<tbody>
 									{ledgerEntries.map((entry) => (
 										<tr key={entry.id}>
-											<td className="mono">{entry.id}</td>
-											<td className="mono">{entry.time}</td>
+											<td className="mono mg-cell-number">{entry.id}</td>
+											<td className="mono mg-cell-number">{entry.time}</td>
 											<td>{entry.counterparty}</td>
-											<td>{entry.type}</td>
-											<td>{entry.channel}</td>
-											<td className={entry.amount < 0 ? "mg-ledger-amount outgoing mono" : "mg-ledger-amount incoming mono"}>
+											<td className="mg-cell-status">{entry.type}</td>
+											<td className="mg-cell-status">{entry.channel}</td>
+											<td className={entry.amount < 0 ? "mg-ledger-amount outgoing mono mg-cell-number" : "mg-ledger-amount incoming mono mg-cell-number"}>
 												{entry.amount < 0
 													? `(${amountFormatter.format(Math.abs(entry.amount))})`
 													: `+${amountFormatter.format(entry.amount)}`}
