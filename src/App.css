@@ -2,14 +2,14 @@
   display: grid;
   grid-template-columns: 264px 1fr;
   min-height: 100vh;
-  background: radial-gradient(circle at 15% 10%, rgba(15, 118, 110, 0.16), transparent 33%),
-    radial-gradient(circle at 85% 0%, rgba(245, 158, 11, 0.17), transparent 28%),
-    linear-gradient(160deg, #f7f7f4 0%, #fbfaf8 45%, #f3f4ef 100%);
+  background: radial-gradient(circle at 15% 10%, rgba(191, 220, 236, 0.3), transparent 33%),
+    radial-gradient(circle at 85% 0%, rgba(243, 98, 31, 0.16), transparent 28%),
+    linear-gradient(160deg, #f7fbff 0%, #f8fcff 45%, #f1f7fc 100%);
 }
 
 .sidebar {
   border-right: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(8, 16, 28, 0.95));
+  background: linear-gradient(180deg, rgba(14, 31, 61, 0.98), rgba(9, 20, 42, 0.98));
   color: #e2e8f0;
   padding: 20px 18px;
   display: flex;
@@ -33,7 +33,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.06em;
-  background: linear-gradient(130deg, #0f766e, #f59e0b);
+  background: linear-gradient(130deg, var(--brand-dark), var(--brand-accent));
   color: white;
 }
 
@@ -45,7 +45,7 @@
 
 .brand p {
   margin: 2px 0 0;
-  color: #93c5fd;
+  color: var(--brand-light);
   font-size: 0.84rem;
 }
 
@@ -94,13 +94,13 @@
 }
 
 .mg-nav-link:hover {
-  background: rgba(249, 115, 22, 0.08);
+  background: rgba(243, 98, 31, 0.12);
   color: #ffffff;
 }
 
 .mg-nav-link.active {
-  background: rgba(249, 115, 22, 0.16);
-  border-color: rgba(249, 115, 22, 0.55);
+  background: rgba(243, 98, 31, 0.2);
+  border-color: rgba(243, 98, 31, 0.55);
   color: #ffffff;
 }
 
@@ -119,7 +119,7 @@
 }
 
 .mg-pill.orange {
-  background: #f97316;
+  background: var(--brand-accent);
   color: #fff7ed;
 }
 
@@ -152,8 +152,8 @@
 }
 
 .nav-item.active {
-  background: rgba(14, 165, 233, 0.17);
-  border-color: rgba(14, 165, 233, 0.35);
+  background: rgba(191, 220, 236, 0.26);
+  border-color: rgba(191, 220, 236, 0.55);
 }
 
 .nav-item:hover {
@@ -167,7 +167,7 @@
   border-radius: 999px;
   padding: 2px 7px;
   color: #0f172a;
-  background: #f59e0b;
+  background: var(--brand-accent);
 }
 
 .profile-chip {
@@ -188,7 +188,7 @@
   display: grid;
   place-items: center;
   font-weight: 700;
-  background: linear-gradient(135deg, #f59e0b, #f97316);
+  background: linear-gradient(135deg, var(--brand-accent), #d64f12);
   color: #111827;
 }
 
@@ -239,9 +239,9 @@
 
 .health-pill {
   border-radius: 999px;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  background: rgba(16, 185, 129, 0.1);
-  color: #065f46;
+  border: 1px solid rgba(191, 220, 236, 0.45);
+  background: rgba(191, 220, 236, 0.26);
+  color: var(--brand-dark);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -253,11 +253,11 @@
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  background: #10b981;
+  background: var(--brand-accent);
 }
 
 .health-pill small {
-  color: #047857;
+  color: #334155;
 }
 
 .kpi-grid {
@@ -389,8 +389,8 @@
 }
 
 .auth-card button[type="submit"] {
-  border: 1px solid rgba(14, 165, 233, 0.35);
-  background: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(243, 98, 31, 0.4);
+  background: rgba(243, 98, 31, 0.14);
   color: #0f172a;
   border-radius: 10px;
   padding: 10px 12px;
@@ -400,7 +400,7 @@
 }
 
 .auth-card button[type="submit"]:hover {
-  background: rgba(14, 165, 233, 0.18);
+  background: rgba(243, 98, 31, 0.2);
 }
 
 .login-page {
@@ -454,8 +454,8 @@
 }
 
 .login-header {
-  background: #032d63;
-  color: #c7d2fe;
+  background: var(--brand-dark);
+  color: #d5e7f3;
   padding: 36px 28px 28px;
   text-align: center;
 }
@@ -468,12 +468,14 @@
   gap: 10px;
   font-size: clamp(1.5rem, 2.4vw, 2rem);
   line-height: 1.15;
-  color: #dbeafe;
+  color: #eef7fc;
 }
 
-.login-brand-icon {
-  color: #9fc2ff;
-  display: inline-flex;
+.login-brand-logo {
+  width: 120px;
+  max-width: 34vw;
+  height: auto;
+  display: inline-block;
 }
 
 .login-header p {
@@ -482,7 +484,7 @@
   letter-spacing: 0.2em;
   font-size: 0.76rem;
   font-weight: 600;
-  color: #93c5fd;
+  color: var(--brand-light);
 }
 
 .login-body {
@@ -585,8 +587,8 @@
 }
 
 .input-wrap input:focus {
-  border-color: #295ea5;
-  box-shadow: 0 0 0 3px rgba(41, 94, 165, 0.14);
+  border-color: var(--brand-dark);
+  box-shadow: 0 0 0 3px rgba(191, 220, 236, 0.45);
 }
 
 .input-wrap.has-error input {
@@ -612,7 +614,7 @@
 }
 
 .forgot-link {
-  color: #0b163f;
+  color: var(--brand-dark);
   text-decoration: none;
   font-size: 0.84rem;
   font-weight: 700;
@@ -1427,14 +1429,14 @@
   grid-template-columns: 260px minmax(0, 1fr);
   overflow-x: clip;
   background:
-    radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 26%),
-    linear-gradient(180deg, #f7f8fc 0%, #f3f5fa 100%);
+    radial-gradient(circle at top right, rgba(243, 98, 31, 0.14), transparent 26%),
+    linear-gradient(180deg, #f7fbff 0%, #f0f6fc 100%);
 }
 
 .mg-sidenav {
   border-right: 1px solid rgba(148, 163, 184, 0.16);
   padding: 16px;
-  background: linear-gradient(180deg, #07172b 0%, #08192f 55%, #06111f 100%);
+  background: linear-gradient(180deg, #0e1f3d 0%, #10264a 55%, #0b1830 100%);
   color: #dbe5f4;
   display: flex;
   flex-direction: column;
@@ -1447,19 +1449,11 @@
   align-items: center;
 }
 
-.mg-brand-icon {
-  min-width: 72px;
-  height: 32px;
-  border-radius: 8px;
-  background: linear-gradient(180deg, #f97316 0%, #ea580c 100%);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0 10px;
+.mg-brand-logo {
+  width: 138px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .mg-brand-wrap h1 {
@@ -1495,13 +1489,13 @@
 }
 
 .mg-nav-item.active {
-  background: rgba(249, 115, 22, 0.16);
+  background: rgba(243, 98, 31, 0.22);
   color: #ffffff;
 }
 
 .mg-nav-item:hover,
 .mg-nav-item.muted:hover {
-  background: rgba(249, 115, 22, 0.08);
+  background: rgba(243, 98, 31, 0.12);
 }
 
 .mg-side-actions {
@@ -1528,7 +1522,7 @@
   font-weight: 700;
   font-size: 0.74rem;
   color: #fff7ed;
-  background: linear-gradient(180deg, #f97316 0%, #ea580c 100%);
+  background: linear-gradient(180deg, var(--brand-accent) 0%, #d64f12 100%);
 }
 
 .mg-profile-card strong {
@@ -1558,7 +1552,7 @@
 
 .mg-create-btn {
   border: 0;
-  background: linear-gradient(180deg, #f97316 0%, #ea580c 100%);
+  background: linear-gradient(180deg, var(--brand-accent) 0%, #d64f12 100%);
   color: #fff7ed;
   border-radius: 8px;
   padding: 11px 12px;
@@ -1821,7 +1815,7 @@
 .mg-eyebrow {
   margin: 0;
   text-transform: uppercase;
-  color: #a04100;
+  color: var(--brand-accent);
   letter-spacing: 0.05em;
   font-size: 0.72rem;
   font-weight: 700;
@@ -1858,7 +1852,7 @@
 }
 
 .mg-filter-row button.active {
-  background: #f97316;
+  background: var(--brand-accent);
   color: #fff7ed;
   font-weight: 700;
 }
@@ -1910,13 +1904,13 @@
 }
 
 .mg-metric-head strong.down {
-  background: rgba(249, 115, 22, 0.12);
-  color: #b45309;
+  background: rgba(243, 98, 31, 0.16);
+  color: #b54716;
 }
 
 .mg-metric-head strong.neutral {
-  background: rgba(59, 130, 246, 0.12);
-  color: #1d4ed8;
+  background: rgba(191, 220, 236, 0.42);
+  color: var(--brand-dark);
 }
 
 .mg-metric-value {
@@ -1935,7 +1929,7 @@
 .mg-mini-bars {
   height: 24px;
   border-radius: 6px;
-  background: linear-gradient(90deg, #dbeafe 10%, #93c5fd 62%, #f97316 100%);
+  background: linear-gradient(90deg, #eaf5fc 10%, var(--brand-light) 62%, var(--brand-accent) 100%);
 }
 
 .mg-live-row {
@@ -2005,8 +1999,8 @@
 }
 
 .mg-orders-tabs button.active {
-  background: #f97316;
-  border-color: #f97316;
+  background: var(--brand-accent);
+  border-color: var(--brand-accent);
   color: #fff7ed;
 }
 
@@ -2187,8 +2181,8 @@
 }
 
 .mg-vendors-tabs button.active {
-  background: #f97316;
-  border-color: #f97316;
+  background: var(--brand-accent);
+  border-color: var(--brand-accent);
   color: #fff7ed;
 }
 
@@ -2219,7 +2213,7 @@
   border-radius: 8px;
   display: grid;
   place-items: center;
-  background: #0f172a;
+  background: var(--brand-dark);
   color: #f8fafc;
   font-size: 0.72rem;
   font-weight: 700;
@@ -2233,13 +2227,13 @@
 }
 
 .mg-tier-pill.premium {
-  background: rgba(249, 115, 22, 0.16);
-  color: #c2410c;
+  background: rgba(243, 98, 31, 0.16);
+  color: #b54716;
 }
 
 .mg-tier-pill.standard {
-  background: rgba(245, 158, 11, 0.16);
-  color: #a16207;
+  background: rgba(191, 220, 236, 0.42);
+  color: var(--brand-dark);
 }
 
 .mg-tier-pill.basic {
@@ -2291,7 +2285,7 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: #0f172a;
+  background: var(--brand-dark);
   color: #f8fafc;
   font-size: 0.72rem;
   font-weight: 700;
@@ -2305,18 +2299,18 @@
 }
 
 .mg-vehicle-pill.motorcycle {
-  background: rgba(59, 130, 246, 0.14);
-  color: #1d4ed8;
+  background: rgba(191, 220, 236, 0.42);
+  color: var(--brand-dark);
 }
 
 .mg-vehicle-pill.bicycle {
-  background: rgba(16, 185, 129, 0.14);
-  color: #047857;
+  background: rgba(243, 98, 31, 0.16);
+  color: #b54716;
 }
 
 .mg-vehicle-pill.car {
-  background: rgba(124, 58, 237, 0.14);
-  color: #6d28d9;
+  background: rgba(14, 31, 61, 0.14);
+  color: var(--brand-dark);
 }
 
 .mg-rate-cell {
@@ -2343,7 +2337,7 @@
   height: 100%;
   display: block;
   border-radius: inherit;
-  background: linear-gradient(90deg, #0ea5e9 0%, #22c55e 100%);
+  background: linear-gradient(90deg, var(--brand-light) 0%, var(--brand-accent) 100%);
 }
 
 .mg-rider-status {
@@ -2393,34 +2387,34 @@
 }
 
 .mg-chart-area {
-  fill: rgba(249, 115, 22, 0.16);
+  fill: rgba(243, 98, 31, 0.16);
 }
 
 .mg-chart-line {
   fill: none;
-  stroke: #f97316;
+  stroke: var(--brand-accent);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
 .mg-chart-point {
-  fill: #0f172a;
+  fill: var(--brand-dark);
   stroke: #f8fafc;
   stroke-width: 2;
 }
 
 .mg-chart-point.active {
-  fill: #f97316;
+  fill: var(--brand-accent);
 }
 
 .mg-chart-tooltip {
   position: absolute;
   transform: translate(-50%, -115%);
-  background: #0f172a;
+  background: var(--brand-dark);
   color: #f8fafc;
   border-radius: 10px;
-  border: 1px solid rgba(249, 115, 22, 0.5);
+  border: 1px solid rgba(243, 98, 31, 0.5);
   padding: 8px 10px;
   pointer-events: none;
   min-width: 150px;
@@ -2829,15 +2823,15 @@
 }
 
 .mg-finance-dot.subscriptions {
-  background: #f97316;
+  background: var(--brand-accent);
 }
 
 .mg-finance-dot.delivery {
-  background: #0ea5e9;
+  background: var(--brand-light);
 }
 
 .mg-finance-dot.b2b {
-  background: #22c55e;
+  background: var(--brand-dark);
 }
 
 .mg-finance-ledger-table td,
@@ -2965,7 +2959,7 @@
   }
 
   .mg-mobile-nav a.active {
-    background: #f97316;
+    background: var(--brand-accent);
     color: #fff7ed;
   }
 }

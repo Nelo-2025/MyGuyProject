@@ -243,7 +243,7 @@ function Overview() {
 		<div className="mg-dashboard">
 			<aside className="mg-sidenav">
 				<div className="mg-brand-wrap">
-					<div className="mg-brand-icon">MYGUY</div>
+					<img className="mg-brand-logo" src="/mg-logo.png" alt="MyGuy logo" />
 					<div>
 						<h1>MYGUY</h1>
 						<p>Logistics Management</p>
@@ -340,14 +340,14 @@ function Overview() {
 												<AreaChart data={revenueTrend} margin={{ top: 16, right: 18, left: 6, bottom: 6 }}>
 													<defs>
 														<linearGradient id="mgRevenueFill" x1="0" y1="0" x2="0" y2="1">
-															<stop offset="0%" stopColor="#f97316" stopOpacity={0.28} />
-															<stop offset="100%" stopColor="#f97316" stopOpacity={0.03} />
+															<stop offset="0%" stopColor="#F3621F" stopOpacity={0.28} />
+															<stop offset="100%" stopColor="#F3621F" stopOpacity={0.03} />
 														</linearGradient>
 													</defs>
 													<CartesianGrid strokeDasharray="4 4" stroke="rgba(148, 163, 184, 0.28)" />
-													<XAxis dataKey="label" stroke="#64748b" tickLine={false} axisLine={false} tick={{ fontSize: 11, fontFamily: "var(--mono)" }} />
+													<XAxis dataKey="label" stroke="#5A6A82" tickLine={false} axisLine={false} tick={{ fontSize: 11, fontFamily: "var(--mono)" }} />
 													<YAxis
-														stroke="#64748b"
+														stroke="#5A6A82"
 														tickLine={false}
 														axisLine={false}
 														tick={{ fontSize: 11, fontFamily: "var(--mono)" }}
@@ -361,20 +361,20 @@ function Overview() {
 														contentStyle={{
 															borderRadius: "10px",
 															border: "1px solid rgba(249, 115, 22, 0.5)",
-															background: "#0f172a",
-															color: "#f8fafc",
+															background: "#0E1F3D",
+															color: "#F8FAFC",
 														}}
-														labelStyle={{ color: "#cbd5e1", fontSize: "12px" }}
-														itemStyle={{ color: "#f8fafc" }}
+														labelStyle={{ color: "#BFDCEC", fontSize: "12px" }}
+														itemStyle={{ color: "#F8FAFC" }}
 													/>
 													<Area
 														type="monotone"
 														dataKey="value"
-														stroke="#f97316"
+														stroke="#F3621F"
 														strokeWidth={3}
 														fill="url(#mgRevenueFill)"
-														dot={{ r: 3.4, stroke: "#f8fafc", strokeWidth: 2, fill: "#0f172a" }}
-														activeDot={{ r: 5, stroke: "#f8fafc", strokeWidth: 2, fill: "#f97316" }}
+														dot={{ r: 3.4, stroke: "#F8FAFC", strokeWidth: 2, fill: "#0E1F3D" }}
+														activeDot={{ r: 5, stroke: "#F8FAFC", strokeWidth: 2, fill: "#F3621F" }}
 													/>
 												</AreaChart>
 											</ResponsiveContainer>

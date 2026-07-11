@@ -54,7 +54,7 @@ function AdminShell({ title, children }: AdminShellProps) {
     <div className="mg-dashboard">
       <aside className="mg-sidenav">
         <div className="mg-brand-wrap">
-          <div className="mg-brand-icon">MYGUY</div>
+          <img className="mg-brand-logo" src="/mg-logo.png" alt="MyGuy logo" />
           <div>
             <h1>MYGUY</h1>
             <p>Logistics Management</p>

@@ -31,9 +31,9 @@ const runwayMetrics: FinanceMetric[] = [
 ];
 
 const revenueMix: RevenueSlice[] = [
-	{ label: "Subscriptions", percent: 62, tone: "subscriptions", color: "#f97316" },
-	{ label: "Delivery margin", percent: 31, tone: "delivery", color: "#0ea5e9" },
-	{ label: "B2B pipeline", percent: 7, tone: "b2b", color: "#22c55e" },
+	{ label: "Subscriptions", percent: 62, tone: "subscriptions", color: "#F3621F" },
+	{ label: "Delivery margin", percent: 31, tone: "delivery", color: "#BFDCEC" },
+	{ label: "B2B pipeline", percent: 7, tone: "b2b", color: "#0E1F3D" },
 ];
 
 const ledgerEntries: LedgerEntry[] = [
@@ -107,11 +107,11 @@ function Finance() {
 											contentStyle={{
 												borderRadius: "10px",
 												border: "1px solid rgba(148, 163, 184, 0.24)",
-												background: "#0f172a",
-												color: "#f8fafc",
+												background: "#0E1F3D",
+												color: "#F8FAFC",
 											}}
-											labelStyle={{ color: "#cbd5e1", fontSize: "12px" }}
-											itemStyle={{ color: "#f8fafc" }}
+											labelStyle={{ color: "#BFDCEC", fontSize: "12px" }}
+											itemStyle={{ color: "#F8FAFC" }}
 										/>
 									</PieChart>
 								</ResponsiveContainer>

@@ -121,14 +121,7 @@ function Login({ onLogin }: LoginProps) {
       <main className="login-card" aria-labelledby="login-title">
         <header className="login-header">
           <h1>
-            <span className="login-brand-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" role="presentation">
-                <path d="M2.5 6.5h10v8h-10z" />
-                <path d="M12.5 10.5h4l2.2 2.1V14.5h-6.2z" />
-                <circle cx="7" cy="16.5" r="1.9" />
-                <circle cx="17.2" cy="16.5" r="1.9" />
-              </svg>
-            </span>
+            <img className="login-brand-logo" src="/mg-logo.png" alt="MyGuy logo" />
             <span>MyGuy Logistics</span>
           </h1>
           <p>Admin Portal</p>
