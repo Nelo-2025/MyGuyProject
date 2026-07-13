@@ -50,6 +50,7 @@ function App() {
           </div>
         </div>
       </aside>
+      
 
       <main className="main-panel">
         <header className="top-strip">
