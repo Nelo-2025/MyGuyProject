@@ -122,7 +122,6 @@ function Login({ onLogin }: LoginProps) {
         <header className="login-header">
           <h1>
             <img className="login-brand-logo" src="/mg-logo.png" alt="MyGuy logo" />
-            <span>MyGuy Logistics</span>
           </h1>
           <p>Admin Portal</p>
         </header>

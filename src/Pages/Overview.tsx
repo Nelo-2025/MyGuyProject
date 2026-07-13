@@ -244,10 +244,6 @@ function Overview() {
 			<aside className="mg-sidenav">
 				<div className="mg-brand-wrap">
 					<img className="mg-brand-logo" src="/mg-logo.png" alt="MyGuy logo" />
-					<div>
-						<h1>MYGUY</h1>
-						<p>Logistics Management</p>
-					</div>
 				</div>
 
 				<nav className="mg-nav-list" aria-label="Primary navigation">
