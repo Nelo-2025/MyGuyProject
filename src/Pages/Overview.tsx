@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
-import SystemTopBar from "./Component/SystemTopBar.tsx";
+import AdminShell from "./Component/AdminShell.tsx";
 
 type MetricCard = {
 	label: string;
@@ -40,34 +40,6 @@ type OrderRow = {
 };
 
 type OrdersTab = "all" | "in-progress" | "delivered" | "issues";
-
-type SidebarLink = {
-	label: string;
-	to: string;
-	count?: string;
-	countClassName?: string;
-};
-
-const operationsLinks: SidebarLink[] = [
-	{ label: "Overview", to: "/overview" },
-	{ label: "Orders", to: "/orders", count: "14", countClassName: "orange" },
-	{ label: "Vendors", to: "/vendors", count: "10", countClassName: "gray" },
-	{ label: "Riders", to: "/riders", count: "15", countClassName: "gray" },
-	{ label: "Finance", to: "/finance" },
-];
-
-const growthLinks: SidebarLink[] = [
-	{ label: "Validation", to: "/validation" },
-	{ label: "Network Brain", to: "/network-brain" },
-];
-
-const mobileLinks: Array<{ label: string; to: string }> = [
-	{ label: "Dashboard", to: "/overview" },
-	{ label: "Fleet", to: "/riders" },
-	{ label: "New", to: "/orders" },
-	{ label: "Alerts", to: "/finance" },
-	{ label: "Profile", to: "/vendors" },
-];
 
 const metrics: MetricCard[] = [
 	{
@@ -146,21 +118,8 @@ const ordersTabs: Array<{ key: OrdersTab; label: string }> = [
 	{ key: "issues", label: "Issues" },
 ];
 
-function SidebarLinkItem({ label, to, count, countClassName }: SidebarLink) {
-	return (
-		<NavLink
-			to={to}
-			className={({ isActive }) => `mg-nav-link${isActive ? " active" : ""}`}
-		>
-			<span>{label}</span>
-			{count ? <span className={`mg-pill ${countClassName ?? ""}`}>{count}</span> : null}
-		</NavLink>
-	);
-}
-
 function Overview() {
 	const { pathname } = useLocation();
-	const navigate = useNavigate();
 	const [ordersSearchQuery, setOrdersSearchQuery] = useState("");
 	const [activeOrdersTab, setActiveOrdersTab] = useState<OrdersTab>("all");
 	const pageTitleMap: Record<string, string> = {
@@ -240,60 +199,7 @@ function Overview() {
 	}, []);
 
 	return (
-		<div className="mg-dashboard">
-			<aside className="mg-sidenav">
-				<div className="mg-brand-wrap">
-					<img className="mg-brand-logo" src="/mg-logo.png" alt="MyGuy logo" />
-				</div>
-
-				<nav className="mg-nav-list" aria-label="Primary navigation">
-					<div className="mg-nav-group">
-						<h2>Operation</h2>
-						<div className="mg-nav-links">
-							{operationsLinks.map((link) => (
-								<SidebarLinkItem key={link.to} {...link} />
-							))}
-						</div>
-					</div>
-
-					<div className="mg-nav-group">
-						<h2>Growth</h2>
-						<div className="mg-nav-links">
-							{growthLinks.map((link) => (
-								<SidebarLinkItem key={link.to} {...link} />
-							))}
-						</div>
-					</div>
-				</nav>
-
-				<div className="mg-side-actions">
-					<button type="button" className="mg-create-btn">
-						Create Shipment
-					</button>
-					<button type="button" className="mg-nav-item muted">
-						Help Center
-					</button>
-					<button
-						type="button"
-						className="mg-nav-item muted"
-						onClick={() => navigate("/")}
-					>
-						Logout
-					</button>
-				</div>
-
-				<div className="mg-profile-card" aria-label="Current administrator profile">
-					<span className="mg-profile-avatar">EM</span>
-					<div>
-						<strong>Emmanuel</strong>
-						<p>CEO &amp; Admin</p>
-					</div>
-				</div>
-			</aside>
-
-			<main className="mg-canvas">
-				<SystemTopBar title={pageTitle} />
-
+		<AdminShell title={pageTitle}>
 				<section className="mg-content mg-overview-content">
 					<div className="mg-heading-row">
 						<div>
@@ -485,20 +391,7 @@ function Overview() {
 						</article>
 					)}
 				</section>
-
-				<nav className="mg-mobile-nav" aria-label="Mobile">
-					{mobileLinks.map((link) => (
-						<NavLink
-							key={link.to}
-							to={link.to}
-							className={({ isActive }) => (isActive ? "active" : "")}
-						>
-							{link.label}
-						</NavLink>
-					))}
-				</nav>
-			</main>
-		</div>
+		</AdminShell>
 	);
 }
 

@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
 
 :root {
-  --brand-light: #bfdcec;
-  --brand-accent: #f3621f;
-  --brand-dark: #0e1f3d;
+  --brand-light: #BFDCEC;
+  --brand-accent: #F3621F;
+  --brand-dark: #0E1F3D;
 
   --line: #cbd5e1;
   --text: #2a3a52;
